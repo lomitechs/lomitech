@@ -1,27 +1,27 @@
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+          nav = document.getElementById(navId);
 
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
+            nav.classList.toggle('show');
+        });
     }
-}
-showMenu('nav-toggle','nav-menu')
+};
+showMenu('nav-toggle','nav-menu');
 
 /*===== ACTIVE AND REMOVE MENU =====*/
 const navLink = document.querySelectorAll('.nav__link');   
 
 function linkAction(){
-  /*Active link*/
-  navLink.forEach(n => n.classList.remove('active'));
-  this.classList.add('active');
-  
-  /*Remove menu mobile*/
-  const navMenu = document.getElementById('nav-menu')
-  navMenu.classList.remove('show')
+    /*Active link*/
+    navLink.forEach(n => n.classList.remove('active'));
+    this.classList.add('active');
+    
+    /*Remove menu mobile*/
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show');
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
@@ -56,6 +56,33 @@ sr.reveal('.work__img',{interval: 200});
 /*SCROLL CONTACT*/
 sr.reveal('.contact__input',{interval: 200}); 
 
+/*===== LOGIN AND REGISTRATION =====*/
+const loginForm = document.getElementById('loginForm');
+const loginEmail = document.getElementById('loginEmail');
+const loginPassword = document.getElementById('loginPassword');
 
+const registerForm = document.getElementById('registerForm');
+const registerName = document.getElementById('registerName');
+const registerEmail = document.getElementById('registerEmail');
+const registerPassword = document.getElementById('registerPassword');
 
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const email = loginEmail.value;
+    const password = loginPassword.value;
+
+    // Perform login logic here using localStorage or AJAX requests
+    // Example: Validate credentials and redirect to another page
+});
+
+registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = registerName.value;
+    const email = registerEmail.value;
+    const password = registerPassword.value;
+
+    // Perform registration logic here using localStorage or AJAX requests
+    // Example: Store user data and display a success message
+});
